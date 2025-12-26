@@ -127,7 +127,6 @@ function PlayersList({ players, revealed }) {
       emoji,
     });
 
-    // sender ko bhi animation dikhe
     const targetCard = document.querySelector(
       `[data-player-id="${targetPlayerId}"]`
     );
@@ -184,7 +183,7 @@ function PlayersList({ players, revealed }) {
                 )}
               </div>
 
-              {/* 👇 EMOJI PICKER */}
+              {/* EMOJI PICKER */}
               <div
                 className="absolute -bottom-2 z-10 opacity-0 group-hover:opacity-100
                            transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto

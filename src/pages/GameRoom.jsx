@@ -9,9 +9,9 @@ function GameRoom() {
   const { gameId } = useParams();
   const [room, setRoom] = useState(null);
   const [selfId, setSelfId] = useState(null);
-  const [inviteCopied, setInviteCopied] = useState(false); // State for invite button feedback
+  const [inviteCopied, setInviteCopied] = useState(false); 
 
-  // 🔑 Rejoin + persist logic (FIX)
+  // Rejoin + persist logic
   useEffect(() => {
     // save gameId so refresh pe mile
     if (gameId) {
@@ -22,7 +22,7 @@ function GameRoom() {
     const storedPlayerName = localStorage.getItem("playerName");
     const storedRole = localStorage.getItem("role");
 
-    // socket connect hone ke baad hi rejoin bhejo
+    // rejoin after socket connection
     const tryRejoin = () => {
       setSelfId(socket.id);
 
@@ -46,7 +46,7 @@ function GameRoom() {
       setRoom(updatedRoom);
     });
 
-    // Host notification
+    // Handle host assignment (debugging/logging purpose)
     socket.on("host-assigned", ({ message }) => {
       console.log(message);
     });
@@ -110,9 +110,6 @@ function GameRoom() {
 
         {/* PLAYERS LIST CARD */}
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-700/50">
-          {/* <h2 className="text-xl font-bold text-white mb-4">Participants</h2> */}
-          {/* The PlayersList component is rendered here. 
-              Ensure it is styled to match the dark theme (e.g., text-white, etc.) */}
           <PlayersList
             players={room?.players || []}
             revealed={room?.revealed}
@@ -123,8 +120,6 @@ function GameRoom() {
       {/* FIXED BOTTOM CONTAINER FOR TABLE/ACTION AREA */}
       <div className="w-full bg-gray-900/80 backdrop-blur-md border-t border-gray-700 py-2 px-3 fixed bottom-0 left-0 right-0">
         <div className="max-w-7xl mx-auto">
-          {/* The TablePlaceholder component is rendered here. 
-              It will contain the card selection and game controls. */}
           <TablePlaceholder
             room={room}
             selfId={selfId}

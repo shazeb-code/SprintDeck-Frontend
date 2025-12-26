@@ -16,7 +16,7 @@ function TablePlaceholder({ room, selfId, onCardSelect, onReveal, onResetRound }
  return (
     <div className="bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700/50 py-3 flex justify-center items-center gap-3 transition-all duration-500">
       
-      {/* 1️⃣ Vote Results (shown after reveal) */}
+      {/* Vote Results (shown after reveal) */}
       {room?.revealed && (
         <div className="text-center py-3 px-4 bg-gray-900/50 rounded-xl border border-gray-700/50 animate-fadeIn">
           <p className="text-xl font-extrabold text-white mb-1">Vote Results</p>
@@ -41,13 +41,9 @@ function TablePlaceholder({ room, selfId, onCardSelect, onReveal, onResetRound }
         </div>
       )}
 
-      {/* 2️⃣ Card Selection (shown before reveal) */}
+      {/* Card Selection (shown before reveal) */}
       {!room?.revealed && (
         <div className="animate-fadeIn">
-          {/* A little instruction text for the user */}
-          {/* {!isSpectator && !currentPlayer?.selectedCard && (
-             <p className="text-center text-gray-400 mb-3">Select a card to vote</p>
-          )} */}
           <CardsGrid
             selectedCard={currentPlayer?.selectedCard}
             onSelect={onCardSelect}
@@ -56,7 +52,7 @@ function TablePlaceholder({ room, selfId, onCardSelect, onReveal, onResetRound }
         </div>
       )}
 
-      {/* 3️⃣ Host-only Control Buttons */}
+      {/* Host-only Control Buttons */}
       {isHost && (
         <div className="flex gap-4 justify-center animate-fadeIn">
           {!room?.revealed && (

@@ -27,14 +27,14 @@ function CreateGame() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-900 via-purple-900 to-gray-900 p-4">
-      {/* Solid, modern card container */}
+      {/* card container */}
       <div className="w-full max-w-md bg-gray-800 rounded-2xl shadow-2xl shadow-purple-500/20 border border-gray-700 p-8 text-center">
         {/* Heading with gradient text */}
         <h2 className="text-3xl font-extrabold mb-8 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           Create New Game
         </h2>
 
-        {/* Form container with vertical spacing */}
+        {/* Form container */}
         <form
           className="space-y-6"
           onSubmit={(e) => {
@@ -42,7 +42,7 @@ function CreateGame() {
             handleCreateGame();
           }}
         >
-          {/* Game Name Input Group */}
+          {/* Game Name */}
           <div className="text-left">
             <label
               htmlFor="gameName"
@@ -60,7 +60,7 @@ function CreateGame() {
             />
           </div>
 
-          {/* Player Name Input Group */}
+          {/* Player Name */}
           <div className="text-left">
             <label
               htmlFor="playerName"
@@ -78,7 +78,7 @@ function CreateGame() {
             />
           </div>
 
-          {/* Call-to-action button with enhanced hover effects */}
+          {/* Button */}
           <button
             type="submit"
             className="w-full bg-linear-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg shadow-purple-500/50 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-blue-400 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 cursor-pointer"

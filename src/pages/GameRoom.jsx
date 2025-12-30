@@ -78,7 +78,7 @@ function GameRoom() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-900 via-purple-900 to-gray-900 p-4 md:py-2 md:px-3">
+    <div className="min-h-screen bg-gray-900 p-4 md:py-2 md:px-3">
       <div className="max-w-7xl mx-auto space-y-2 pb-5">
         
         {/* HEADER CARD */}
